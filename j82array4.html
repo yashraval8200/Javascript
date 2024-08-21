@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Records</title>
+</head>
+<body>
+    <table border="2" style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+        </tr>
+    </table>
+</body>
+<script>
+// Array of users
+let users = [
+  { firstName: "Susan", lastName: "Steward", salary: 50000, department: "Engineering" },
+  { firstName: "Daniel", lastName: "Longbottom", salary: 55000, department: "Marketing" },
+  { firstName: "Jacob", lastName: "Black", salary: 45000, department: "Human Resources" },
+  { firstName: "Emily", lastName: "Stone", salary: 52000, department: "Finance" },
+  { firstName: "Olivia", lastName: "Brown", salary: 47000, department: "Engineering" },
+  { firstName: "Liam", lastName: "Johnson", salary: 51000, department: "Sales" },
+  { firstName: "Noah", lastName: "Davis", salary: 53000, department: "Marketing" },
+  { firstName: "Emma", lastName: "Miller", salary: 49000, department: "Engineering" },
+  { firstName: "Sophia", lastName: "Wilson", salary: 48000, department: "Human Resources" },
+  { firstName: "James", lastName: "Moore", salary: 60000, department: "Finance" },
+  { firstName: "Isabella", lastName: "Taylor", salary: 45000, department: "Sales" },
+  { firstName: "Mason", lastName: "Anderson", salary: 56000, department: "Marketing" },
+  { firstName: "Ava", lastName: "Thomas", salary: 52000, department: "Engineering" },
+  { firstName: "Logan", lastName: "Jackson", salary: 53000, department: "Human Resources" },
+  { firstName: "Ethan", lastName: "White", salary: 55000, department: "Finance" },
+  { firstName: "Mia", lastName: "Harris", salary: 47000, department: "Sales" },
+  { firstName: "Alexander", lastName: "Martin", salary: 49000, department: "Marketing" },
+  { firstName: "Charlotte", lastName: "Thompson", salary: 48000, department: "Engineering" },
+  { firstName: "Benjamin", lastName: "Garcia", salary: 50000, department: "Finance" },
+  { firstName: "Amelia", lastName: "Martinez", salary: 53000, department: "Human Resources" }
+];
+
+function displayUsers(users) {
+  // Select the existing table element
+  let table = document.querySelector('table');
+
+  // Generate the rows using map
+  let rows = users.map(user => `
+  ta  
+  <tr>
+      <td>${user.firstName}</td>
+      <td>${user.lastName}</td>
+      <td>${user.salary}</td>
+      <td>${user.department}</td>
+    </tr>
+  `).join(''); // Join the rows into a single string
+
+  // Append the rows to the table
+  table.innerHTML += rows;
+}
+
+// Call the function to display the user records
+displayUsers(users);
+</script>
+</html>

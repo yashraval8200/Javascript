@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 150px;
+        width: 300px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+    }
+
+</style>
+
+<body>
+    <form class="container ">
+        Number<input type="text" placeholder="enter the number"  class="container1" id="txtno1">
+        <br>
+        
+     <input type="button" value="posneg"  class="container1" id="btnsubmit" onclick="posneg();">
+    
+
+     <span id="spanans"></span>
+    </form>
+
+    <script>
+        function posneg(){
+
+            no=parseInt(document.getElementById("txtno1").value)
+
+            if(no>0){
+                document.getElementById("spanans").innerHTML="number is positive"
+            }
+            else if(no<0){
+                document.getElementById("spanans").innerHTML="number is Negative"
+            }
+            else{
+                document.getElementById("spanans").innerHTML="number is Zero"
+            }
+        }
+
+    </script>
+
+    
+</body>
+</html>

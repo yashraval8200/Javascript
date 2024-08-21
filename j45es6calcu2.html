@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 50%;
+        max-width: 200px;
+        background: rgb(0, 0, 0);
+        padding: 20px;
+        margin: 0 28px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 12px rgb(0, 0, 0);
+        margin-left: 40%;
+        margin-top: 15%;
+
+
+
+    }
+
+    .user-input-box input {
+        height: 20px;
+        width: 30%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+
+
+    }
+
+    .user-input-box {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-bottom: 30px;
+        justify-content: center;
+
+    }
+
+    .txt {
+
+        margin-left: 100px;
+    }
+
+    .form-title {
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 6px;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        border-bottom: solid 1px white;
+    }
+</style>
+<link rel="stylesheet" href="Other/css/booking.css">
+
+<body>
+
+    <form class="container">
+        <div class="user-input-box">
+            <h1 class="form-title">Calculator</h1>
+            <input class="txt" type="text" placeholder="Number" readonly id="txtno"><br><br>
+            <input type="button" value="1" id="btnno1">
+            <input type="button" value="2" id="btnno2">
+            <input type="button" value="3" id="btnno3">
+            <input type="button" value="4" id="btnno4">
+            <input type="button" value="5" id="btnno5">
+            <input type="button" value="6" id="btnno6">
+            <input type="button" value="7" id="btnno7">
+            <input type="button" value="8" id="btnno8">
+            <input type="button" value="9" id="btnno9">
+            <input type="button" value="0" id="btnno0">
+            <input type="button" value="+" id="add">
+            <input type="button" value="-" id="sub">
+            <input type="button" value="*" id="mul">
+            <input type="button" value="/" id="div">
+            <input type="button" value="=" id="ans">
+
+        </div>
+    </form>
+    <script>
+        let btnno1 = document.querySelector("#btnno1");
+        let btnno2 = document.querySelector("#btnno2");
+        let btnno3 = document.querySelector("#btnno3");
+        let btnno4 = document.querySelector("#btnno4");
+        let btnno5 = document.querySelector("#btnno5");
+        let btnno6 = document.querySelector("#btnno6");
+        let btnno7 = document.querySelector("#btnno7");
+        let btnno8 = document.querySelector("#btnno8");
+        let btnno9 = document.querySelector("#btnno9");
+        let btnno0 = document.querySelector("#btnno0");
+        let span = document.querySelector("spanans");
+        let txtno = document.querySelector("#txtno");
+        let addition=document.querySelector("#add")
+        let subtraction=document.querySelector("#sub")
+        let multiplication=document.querySelector("#mul")
+        let divison=document.querySelector("#div")
+        let equal=document.querySelector("#ans")
+
+        btnno1.addEventListener("click", () => {
+
+            txtno.value += "1";
+
+        })
+
+
+        btnno2.addEventListener("click", () => {
+
+            txtno.value += "2";
+
+        })
+
+
+        btnno3.addEventListener("click", () => {
+
+            txtno.value += "3";
+
+        })
+
+        btnno4.addEventListener("click", () => {
+
+            txtno.value += "4";
+
+        })
+
+        btnno5.addEventListener("click", () => {
+
+            txtno.value += "5";
+
+        })
+
+        btnno6.addEventListener("click", () => {
+
+            txtno.value += "6";
+
+        })
+
+        btnno7.addEventListener("click", () => {
+
+            txtno.value += "7";
+
+        })
+
+        btnno8.addEventListener("click", () => {
+
+            txtno.value += "8";
+
+        })
+
+        btnno9.addEventListener("click", () => {
+
+            txtno.value += "9";
+
+        })
+
+        btnno0.addEventListener("click", () => {
+
+            txtno.value += "0";
+
+        })
+        addition.addEventListener("click",()=>{
+            txtno.value+="+"
+        })
+        subtraction.addEventListener("click",()=>{
+            txtno.value+="-"
+        })
+        
+        multiplication.addEventListener("click",()=>{
+            txtno.value+="*"
+        })
+        
+        divison.addEventListener("click",()=>{
+            txtno.value+="/"
+        })
+        equal.addEventListener("click",()=>{
+            txtno.value=eval(txtno.value);
+
+        })
+    </script>
+
+</body>
+
+</html>

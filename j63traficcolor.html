@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .container{
+            background-color: black;
+        }
+     .traffic-signal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjust height as needed */
+    position: relative;
+    margin-top: 15%;
+}
+
+.traffic-signal img {
+    width: 200px; /* Adjust width as needed */
+    height: 200px;
+    position: absolute;
+    top: 0;
+    display: none; /* Hide all lights initially */
+}
+
+#red {
+    display: block; /* Show red light initially */
+    z-index: 3; /* Highest priority */
+}
+
+#yellow {
+    z-index: 2; /* Middle priority */
+}
+
+#green {
+    z-index: 1; /* Lowest priority */
+}
+
+    </style>
+</head>
+<body class="container">
+    <div class="traffic-signal">
+        <img id="red" src="red.jpeg.jpg" >
+        <img id="yellow" src="yellow.jpeg.jpg" >
+        <img id="green" src="green.png" >
+    </div>
+
+   
+</body>
+<script>
+
+     // Function to toggle traffic lights
+function toggleLights() {
+    let red = document.getElementById('red');
+    let yellow = document.getElementById('yellow');
+    let green = document.getElementById('green');
+
+    // Toggle visibility of lights
+    if (red.style.display === 'block') {
+        red.style.display = 'none';
+        yellow.style.display = 'block';
+
+    } else if (yellow.style.display === 'block') {
+        yellow.style.display = 'none';
+        green.style.display = 'block';
+        
+    } else {
+        green.style.display = 'none';
+        red.style.display = 'block';
+    }
+}
+
+// Set interval to change lights every 3 seconds
+setInterval(toggleLights, 3000);
+
+</script>
+</html>

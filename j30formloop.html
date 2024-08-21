@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 150px;
+        width: 300px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+    }
+
+</style>
+<body>
+    <form class="container ">
+        Number<input type="text" placeholder="enter the number"  class="container1" id="number1">
+        <br>
+        
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="loop();">
+    
+
+     <span id="spanans"></span>
+    </form>
+    
+</body>
+<script>
+    function loop(){
+        let n=parseInt(document.getElementById("number1").value)
+        let a=""
+
+
+        for(i=0;i<=n;i++){
+                a+="<br>"+i
+        }
+        document.getElementById("spanans").innerHTML=a
+
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="hlo">hello</p>
+    <p class="hlo">hello two</p>
+    <p class="hlo">hello three</p>
+    <p class="hlo">hello four</p>
+    <input type="button" value="qselector" onclick="qselector()">
+    <input type="button" value="qselectorall" onclick="qselectorAll()">
+    <script>
+        function qselector(){
+            document.querySelector(".hlo").style.color="#FF0000";
+        }
+
+
+        function qselectorAll(){
+            let x = document.querySelectorAll(".hlo");
+            for(let n=0;n<x.length;n++){
+                x[n].style.color ="#FF0000"
+            }
+        }
+    </script>
+</body>
+</html>

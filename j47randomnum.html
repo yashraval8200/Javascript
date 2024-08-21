@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click Me"  onclick="randam()"><br>
+    <span id="spanans"></span>
+    
+    
+</body>
+<script>
+    function randam(){
+    let a=(Math.random())*50
+    let b=(Math.random())*50
+
+    document.getElementById("spanans").innerHTML = a + "<br>" + b;
+ 
+    }
+
+
+</script>
+</html>

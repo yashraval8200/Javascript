@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click Me" id="btnans"><br>
+    <span id="spanans"></span><br>
+    <span id="spanans1"></span>
+    
+</body>
+
+
+
+<script>
+    let button=document.querySelector("#btnans");
+    let span1=document.querySelector("#spanans");
+    let span2=document.querySelector("#spanans1");
+    
+    button.addEventListener("click",() =>{
+        
+        let a=Math.round((Math.random())*50);
+        let b= Math.round((Math.random())*50);
+
+        span1.innerHTML="<h1>" + a + "</h1>";
+        span2.innerText="<h1>" + b + "</h1>";
+
+    })
+    
+</script>
+</html>

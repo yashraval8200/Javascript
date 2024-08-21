@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 350px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;  
+    }
+    .container1{
+        margin-top: 20px;
+    }
+    .spanans{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        color: white;
+    }
+
+</style>
+
+<body>
+    <form class="container ">
+        <input type="text" placeholder="number1"  class="container1" id="txtno1">
+        <br>
+        <input type="text" placeholder="number2"  class="container1" id="txtno2">
+        <br>
+     <input type="button" value="addition"  class="container1" id="btnsubmit" onclick="addition();">
+     <input type="button" value="subtraction"  class="container1" id="btnsubmit" onclick="sub();">
+     <input type="button" value="multiplication"  class="container1" id="btnsubmit" onclick="mul();">
+     <input type="button" value="divison"  class="container1" id="btnsubmit" onclick="div();">
+
+     <span id="spanans"></span>
+    </form>
+</body>
+<script>
+    function addition(){
+    let a=parseInt(document.getElementById("txtno1").value);
+    let b=parseInt(document.getElementById("txtno2").value);
+
+    document.getElementById("spanans").innerHTML=a+b;
+    
+}
+
+function sub(){
+    let a=parseInt(document.getElementById("txtno1").value);
+    let b=parseInt(document.getElementById("txtno2").value);
+    document.getElementById("spanans").innerHTML=a-b;   
+}
+function mul(){
+    let a=parseInt(document.getElementById("txtno1").value);
+    let b=parseInt(document.getElementById("txtno2").value);
+    document.getElementById("spanans").innerHTML=a*b;   
+} 
+function div(){
+    let a=parseInt(document.getElementById("txtno1").value);
+    let b=parseInt(document.getElementById("txtno2").value);
+    document.getElementById("spanans").innerHTML=a/b;   
+}   
+</script>
+</html>

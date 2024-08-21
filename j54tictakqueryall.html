@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.container{
+     width: 350px;
+     max-width: 200px;
+     background: rgb(0, 0, 0);
+     padding: 20px;
+     margin: 0 28px;
+     border-radius: 20px;
+     box-shadow: 2px 2px 12px rgb(0, 0, 0);
+     margin-top: 200px;
+     margin-left: 600px;
+    box-shadow: 10px 10px 10px #57669a,
+    -10px -10px 20px #ffffff;
+ 
+     
+     
+ }
+    .user-input-box input{
+     height: 60px;
+     width: 30%;
+     border-radius: 7px;
+     outline: none;
+     border: 1px solid grey;
+     padding: 0 10px;
+     margin: 3px;
+     background-color: azure;
+     
+ }
+
+ .user-input-box{
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     padding-bottom: 30px;
+    justify-content: center;
+
+ }
+
+ .txt{
+    
+    margin-left: 100px; 
+ }
+
+ .form-title{
+     font-size: 26px;
+     font-weight: 600;
+     text-align: center;
+     padding-bottom: 6px;
+     color: white;
+     text-shadow: 2px 2px 2px black;
+     border-bottom: solid 1px white;
+ }
+</style>
+
+  
+<body>
+    
+    <form class="container">
+    <div class="user-input-box">
+
+    
+    <h1 class="form-title">TICTACTOE</h1>      
+    <input  class="reset"   type="button" value="" id="btnno1">
+    <input  class="reset"  type="button" value="" id="btnno2">
+    <input  class="reset"  type="button" value="" id="btnno3">
+    <input  class="reset"  type="button" value="" id="btnno4">
+    <input  class="reset"  type="button" value="" id="btnno5">
+    <input  class="reset"  type="button" value="" id="btnno6">
+    <input  class="reset"  type="button" value="" id="btnno7">
+    <input  class="reset"  type="button" value="" id="btnno8">
+    <input  class="reset"  type="button" value="" id="btnno9">
+    <input type="button" value="Reset"  onclick="reeset()">
+
+    
+</div>
+
+</form>
+    <script>
+        let btnno1=document.querySelector("#btnno1");
+        let btnno2=document.querySelector("#btnno2");
+        let btnno3=document.querySelector("#btnno3");
+        let btnno4=document.querySelector("#btnno4");
+        let btnno5=document.querySelector("#btnno5");
+        let btnno6=document.querySelector("#btnno6");
+        let btnno7=document.querySelector("#btnno7");
+        let btnno8=document.querySelector("#btnno8");
+        let btnno9=document.querySelector("#btnno9"); 
+       
+
+        let n=1;
+        let k=0;
+        
+     
+    
+        btnno1.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno1.value="X"
+                
+            }
+            else{
+                
+                     btnno1.value="0"
+            }
+            
+            n++;  
+            Winner();
+            document.getElementById("btnno1").disabled = true;
+        })
+        
+        
+
+        
+        btnno2.addEventListener("click",()=>{
+            if (n%2==0){
+                
+                btnno2.value="X"
+            }
+            else{
+                
+                     btnno2.value="0"
+            }
+            n++;  
+            Winner();
+            document.getElementById("btnno2").disabled = true;
+        })
+       
+        btnno3.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno3.value="X"
+            }
+            else{
+                
+                     btnno3.value="0"
+            }
+            n++; 
+            Winner();
+            document.getElementById("btnno3").disabled = true; 
+        })
+        btnno4.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno4.value="X"
+            }
+            else{
+                
+                     btnno4.value="0"
+            }
+            n++;
+            Winner();
+            document.getElementById("btnno4").disabled = true;  
+        })
+        btnno5.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno5.value="X"
+            }
+            else{
+                
+                     btnno5.value="0"
+            }
+            n++;
+            Winner(); 
+            document.getElementById("btnno5").disabled = true; 
+        })
+        btnno6.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno6.value="X"
+            }
+            else{
+                
+                     btnno6.value="0"
+            }
+            n++; 
+            Winner();
+            document.getElementById("btnno6").disabled = true; 
+        })
+        btnno7.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno7.value="X"
+            }
+            else{
+                
+                     btnno7.value="0"
+            }
+            n++; 
+            Winner();
+            document.getElementById("btnno7").disabled = true; 
+        })
+        btnno8.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno8.value="X"
+            }
+            else{
+                
+                     btnno8.value="0"
+            }
+            n++;  
+            Winner();
+            document.getElementById("btnno8").disabled = true;
+        })
+        btnno9.addEventListener("click",()=>{
+            if (n%2==0){
+                btnno9.value="X"
+            }
+            else{
+                
+                     btnno9.value="0"
+            }
+            n++;  
+            Winner();
+            document.getElementById("btnno9").disabled = true;
+        })
+
+        function Winner()
+{
+    
+    ///1-2-3
+     if(btnno1.value==btnno2.value && btnno1.value==btnno3.value)
+     {
+          if(btnno1.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno1.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+     
+
+     ///4-5-6
+     if(btnno4.value==btnno5.value && btnno4.value==btnno6.value)
+     {
+          if(btnno4.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno4.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+
+     ///7-8-9
+     if(btnno7.value==btnno8.value && btnno7.value==btnno9.value)
+     {
+          if(btnno7.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno7.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+
+     ///1-4-7
+     if(btnno1.value==btnno4.value && btnno1.value==btnno7.value)
+     {
+          if(btnno1.value=="X")
+          {
+           alert("player 1 WINNER")
+           k=1;;
+          }
+          else if(btnno1.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+          
+     }
+
+     ///2-5-8
+     if(btnno2.value==btnno5.value && btnno2.value==btnno8.value)
+     {
+          if(btnno2.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno2.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+
+     ///3-6-9
+     if(btnno3.value==btnno6.value && btnno3.value==btnno9.value)
+     {
+          if(btnno3.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno3.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+
+     ///1-5-9
+     if(btnno1.value==btnno5.value && btnno1.value==btnno9.value)
+     {
+          if(btnno1.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno1.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+
+     ///3-5-7
+     if(btnno3.value==btnno5.value && btnno3.value==btnno7.value)
+     {
+          if(btnno3.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+          }
+          else if(btnno3.value=="0")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          }
+     }
+     if(n==10 && k==0){
+        alert("draw")
+        
+        
+    
+     }
+
+
+
+}
+
+
+function reeset(){
+    
+    n=1;
+    k=0;
+   
+    let x=document.querySelectorAll(".reset");
+            for(let i=0;i<x.length;i++){
+                x[i].disabled=false;
+                x[i].value="";
+                
+        }
+
+    
+}
+
+    </script>
+
+</body>
+</html>

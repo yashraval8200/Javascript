@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 300px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+    }
+
+</style>
+<body>
+    <form class="container ">
+        p <input type="text" placeholder="Enter the value of p"  class="container1" id="txtno1">
+        <br>
+        R <input type="text" placeholder="Enter the value of r"  class="container1" id="txtno2">
+        <br>
+        N <input type="text" placeholder="Enter the value of n"  class="container1" id="txtno3">
+        <br>
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="simpleint()">
+
+     <span id="spanans"></span>
+    </form>
+    
+</body>
+<script>
+    function simpleint() {
+
+        let p=parseInt(document.getElementById("txtno1").value)
+        let r=parseInt(document.getElementById("txtno2").value)
+        let n=parseInt(document.getElementById("txtno3").value)
+
+        document.getElementById("spanans").innerHTML=p*r*n/100;
+    }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- The body content goes here -->
+</body>
+<script>
+    // Array of image URLs to cycle through
+    let images = ["img1.jpeg", "img2.jpeg"];
+    let currentImageIndex = 0;
+
+    // Define the callback function to change the background image
+    function changeBackgroundImage() {
+        document.body.style.backgroundImage = `url(${images[currentImageIndex]})`;
+        currentImageIndex = (currentImageIndex + 1) % images.length; // Cycle through the images
+    }
+
+    // Call the function every 1000 milliseconds (1 second)
+    setInterval(changeBackgroundImage, 1000);
+</script>
+</html>

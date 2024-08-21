@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <img src="img1.jpeg" id="img1"/>
+     <img src="img2.jpeg" id="img1"/>
+</body>
+<script>
+     let a=1;
+        function changeBackgroundColor() {
+          if(a%2==0)
+          {
+               document.getElementById("img1").src="img2.jpeg";
+          }
+          else{
+               document.getElementById("img1").src="img1.jpeg";
+               
+          }
+          a++;
+
+        }setInterval(changeBackgroundColor, 2000);
+
+</script>
+</html>

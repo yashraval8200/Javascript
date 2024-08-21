@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        border: 1px solid black;
+        height: 400px;
+        width: 600px;
+        text-align: center;
+        background-color: lightblue;
+        margin: 500px;
+        border-radius: 10px;
+        margin-top: 200px;
+        justify-items: auto;
+
+
+
+    }
+
+    .container1 {
+        margin-top: 20px;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <form class="container ">
+        Number 1: <input type="text" placeholder="Enter number" class="container1" id="num1">
+        <br>
+        Number 2: <input type="text" placeholder="Enter number" class="container1" id="num2"><br>
+
+        <input type="radio" value="addition" name="n" class="container1" id="btnsubmit" onclick="addition();">
+        <label for="square">addition</label>
+
+        <input type="radio" value="subtraction" name="n" class="container1" id="btnsubmit" onclick="subtraction();">
+        <label for="cube">subtraction</label>
+
+
+        <input type="radio" value="multiplication" name="n" class="container1" id="btnsubmit"
+            onclick="multiplication();">
+        <label for="cube">multiplication</label>
+
+        <input type="radio" value="divison" name="n" class="container1" id="btnsubmit" onclick="divison();">
+        <label for="cube">divison</label><br>
+
+        <span id="spanans"></span>
+
+    </form>
+
+
+</body>
+
+<script>
+    function addition() {
+
+        let a = parseInt(document.getElementById("num1").value)
+        let b = parseInt(document.getElementById("num2").value)
+
+        document.getElementById("spanans").innerHTML = a + b
+    }
+
+    function subtraction() {
+
+        let a = parseInt(document.getElementById("num1").value)
+        let b = parseInt(document.getElementById("num2").value)
+
+        document.getElementById("spanans").innerHTML = a - b
+    }
+
+    function multiplication() {
+
+        let a = parseInt(document.getElementById("num1").value)
+        let b = parseInt(document.getElementById("num2").value)
+
+        document.getElementById("spanans").innerHTML = a * b
+    }
+
+    function divison() {
+
+        let a = parseInt(document.getElementById("num1").value)
+        let b = parseInt(document.getElementById("num2").value)
+
+        document.getElementById("spanans").innerHTML = a / b
+    }
+</script>
+
+</html>

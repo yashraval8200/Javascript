@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title></title>
+</head>
+
+<body class="bg-gray-500 flex items-center justify-center min-h-screen">
+
+    <form>
+
+        <div class="flex flex-col bg-black rounded-2xl h-[30rem] w-[40rem] shadow-2xl 
+                  shadow-white px-4 pt-[2rem] ">
+
+            <div class="flex mx-2 space-x-7 m-4 ">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card1">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card2">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card3">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card4">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card5">
+            </div>
+
+            <div class="flex mx-2 space-x-7">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card6">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card7">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card8">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card9">
+                <img src="card1.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card10">
+            </div>
+            <div class="flex ml-[31%] mt-6 space-x-7">
+                <input class="bg-red-600 active:bg-red-800 font-bold text-lg text-white rounded-xl 
+                 mb-2 mt-6 w-[16%] cursor-pointer text-sm h-[30px] mr-6" type="button" value=" Reset "
+                    onclick="Reset()">
+
+                <input class="bg-green-600 active:bg-green-800 font-bold text-lg text-white rounded-xl 
+                   w-[14%] cursor-pointer mb-2 mt-6 text-sm h-[48%] mr-2" type="button" value="Match"
+                    onclick="match()">
+
+                <input class="bg-blue-600 active:bg-blue-800 font-bold text-lg text-white rounded-xl 
+                   w-[14%] cursor-pointer mb-2 mt-6 text-sm h-[48%]" type="button" value=" Undo "
+                    onclick="undo()">
+            </div>
+
+        </div>
+
+    </form>
+
+    <script>
+        let card1 = document.querySelector("#card1")
+        let card2 = document.querySelector("#card2")
+        let card3 = document.querySelector("#card3")
+        let card4 = document.querySelector("#card4")
+        let card5 = document.querySelector("#card5")
+        let card6 = document.querySelector("#card6")
+        let card7 = document.querySelector("#card7")
+        let card8 = document.querySelector("#card8")
+        let card9 = document.querySelector("#card9")
+        let card10 = document.querySelector("#card10")
+
+        let a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0;
+        let b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0;
+        let lastcard = null;
+        
+
+        card1.addEventListener("click", () => {
+            card1.src = "jake.jpg"
+            a1 = 1;
+          
+            lastcard = card1;
+        })
+        card2.addEventListener("click", () => {
+            card2.src = "ace.jpg"
+            a2 = 1;
+            
+            lastcard = card2;
+        })
+        card3.addEventListener("click", () => {
+            card3.src = "joker.jpg"
+            a3 = 1;
+          
+            lastcard = card3;
+        })
+        card4.addEventListener("click", () => {
+            card4.src = "king.jpg"
+            a4 = 1;
+          
+            lastcard = card4;
+        })
+        card5.addEventListener("click", () => {
+            card5.src = "queen.jpg"
+            a5 = 1;
+          
+            lastcard = card5;
+        })
+        card6.addEventListener("click", () => {
+            card6.src = "joker.jpg"
+            b3 = 1;
+          
+            lastcard = card6;
+        })
+        card7.addEventListener("click", () => {
+            card7.src = "jake.jpg"
+            b1 = 1;
+            
+            lastcard = card7;
+        })
+        card8.addEventListener("click", () => {
+            card8.src = "ace.jpg"
+            b2 = 1;
+            
+            lastcard = card8;
+        })
+        card9.addEventListener("click", () => {
+            card9.src = "queen.jpg"
+            b5 = 1;
+            
+            lastcard = card9;
+        })
+        card10.addEventListener("click", () => {
+            card10.src = "king.jpg"
+            b4 = 1;
+         
+            lastcard = card10;
+        })
+
+        function resetothercards() {
+            a1 = 0;
+            a2 = 0 ;
+            a3 = 0;
+            a4 = 0;
+            a5 = 0;
+
+            b1 = 0;
+            b2 = 0;
+            b3 = 0;
+            b4 = 0;
+            b5 = 0;
+        }
+
+        function Reset() {
+            let x = document.querySelectorAll(".reset");
+            for (let i = 0; i < x.length; i++) {
+                x[i].disabled = false;
+                x[i].src = "card1.png";
+                x[i].style.display = "block";
+            }
+            resetothercards();
+            lastcard = null;
+            
+        }
+
+        function match() {
+            if (a1 == b1 && a1 == 1) {
+                card1.style.display = 'none';
+                card7.style.display = 'none';
+            }
+            if (a2 == b2 && a2 == 1) {
+                card2.style.display = 'none';
+                card8.style.display = 'none';
+            }
+            if (a3 == b3 && a3 == 1) {
+                card3.style.display = 'none';
+                card6.style.display = 'none';
+            }
+            if (a4 == b4 && a4 == 1) {
+                card4.style.display = 'none';
+                card10.style.display = 'none';
+            }
+            if (a5 == b5 && a5 == 1) {
+                card5.style.display = 'none';
+                card9.style.display = 'none';
+            }
+        }
+
+        function undo() {
+            y=document.querySelectorAll(".reset")
+            for(let i=0; i<y.length;i++){
+                if(lastcard){
+                    y[i].src="card1.png"
+                }
+            }
+            resetothercards();
+            lastcard=null;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 350px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;  
+    }
+    .container1{
+        margin-top: 20px;
+    }
+    .spanans{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        color: white;
+    }
+
+</style>
+<body>
+    <form class="container ">
+        R <input type="text" placeholder="enter the value of R"  class="container1" id="txtno1">
+        <br>
+        
+     <input type="button" value="area of circle"  class="container1" id="btnsubmit" onclick="arecir();">
+    
+
+     <span id="spanans"></span>
+    </form>
+    
+    
+</body>
+<script>
+    function arecir(){ 
+     
+     let r=parseInt(document.getElementById("txtno1").value);
+
+     document.getElementById("spanans").innerHTML=r*r*3.14;
+    }
+</script>
+
+</html>

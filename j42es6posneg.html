@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+       .container {
+    border: 1px solid black;
+    height: 400px;
+    width: 600px;
+    text-align: center;
+    background-color: lightblue;
+    margin: 500px;
+    border-radius: 10px;
+    margin-top: 200px;
+    justify-items: auto;
+}
+
+.container1 {
+    margin-top: 20px;
+    height: 30px;
+}
+</style>
+<body>
+    <form action="" class="container">
+        Number: <input type="text" placeholder="Enter number" class="container1" id="txtno1">
+        <br>
+        <br>
+        <input type="button" id="posneg" value="click me">
+        <br><span id="spanans"></span>
+
+    </form>
+</body>
+<script>
+    let n=document.querySelector("#txtno1");
+    let span=document.querySelector("#spanans")
+    let posneg=document.querySelector("#posneg")
+
+    posneg.addEventListener("click",()=>{
+        let i=parseInt(txtno1.value);
+
+        if(i>0){
+            span.innerHTML="number is positive"
+        }
+        else{
+            span.innerHTML="number is Negative"
+        }
+    })
+</script>
+</html>

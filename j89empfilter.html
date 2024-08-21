@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let employees = [
+    { eno: 1, ename: "John Doe", salary: 50000, gender: "Male", dname: "Engineering" },
+    { eno: 2, ename: "Jane Smith", salary: 55000, gender: "Female", dname: "Marketing" },
+    { eno: 3, ename: "Alice Johnson", salary: 60000, gender: "Female", dname: "Sales" },
+    { eno: 4, ename: "Michael Brown", salary: 45000, gender: "Male", dname: "Support" },
+    { eno: 5, ename: "Emily Davis", salary: 70000, gender: "Female", dname: "Engineering" },
+    { eno: 6, ename: "Chris Wilson", salary: 65000, gender: "Male", dname: "Finance" },
+    { eno: 7, ename: "Linda Martinez", salary: 72000, gender: "Female", dname: "HR" },
+    { eno: 8, ename: "David Lee", salary: 48000, gender: "Male", dname: "Support" },
+    { eno: 9, ename: "Sophia Taylor", salary: 50000, gender: "Female", dname: "Marketing" },
+    { eno: 10, ename: "Daniel Harris", salary: 58000, gender: "Male", dname: "Sales" },
+    { eno: 11, ename: "Olivia Clark", salary: 75000, gender: "Female", dname: "Engineering" },
+    { eno: 12, ename: "Matthew Lewis", salary: 52000, gender: "Male", dname: "Finance" },
+    { eno: 13, ename: "Ava Robinson", salary: 49000, gender: "Female", dname: "Support" },
+    { eno: 14, ename: "Joshua Walker", salary: 68000, gender: "Male", dname: "Engineering" },
+    { eno: 15, ename: "Mia Hall", salary: 53000, gender: "Female", dname: "HR" },
+    { eno: 16, ename: "James Young", salary: 56000, gender: "Male", dname: "Marketing" },
+    { eno: 17, ename: "Isabella King", salary: 62000, gender: "Female", dname: "Sales" },
+    { eno: 18, ename: "William Scott", salary: 51000, gender: "Male", dname: "Finance" },
+    { eno: 19, ename: "Charlotte Green", salary: 74000, gender: "Female", dname: "Engineering" },
+    { eno: 20, ename: "Henry Adams", salary: 53000, gender: "Male", dname: "Support" }
+];
+
+ let name=employees.filter( y => y.ename.startsWith("A"))
+ document.writeln(JSON.stringify(name))
+</script>
+</html>

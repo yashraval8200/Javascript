@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+        .container{
+            display: flex;
+            gap: 50px;
+        }
+     </style>
+</head>
+<body class="container">
+     <img src="img1.jpeg" id="img1"/>
+     <img src="img2.jpeg" id="img2"/>
+</body>
+<script>
+     let a=1;
+        function changeBackgroundColor() {
+          if(a%2==0)
+          {
+               document.getElementById("img1").src="img2.jpeg";
+               document.getElementById("img2").src="img1.jpeg";
+
+            }
+          else{
+               document.getElementById("img1").src="img1.jpeg";
+               document.getElementById("img2").src="img2.jpeg";
+               
+          }
+          a++;
+
+        }
+        setInterval(changeBackgroundColor, 1000);
+
+</script>
+</html>

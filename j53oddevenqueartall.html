@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="hlo">1</p>
+    <p class="hlo">2</p>
+    <p class="hlo">3</p>
+    <p class="hlo">4</p>
+    <p class="hlo">7</p>
+    <p class="hlo">5</p>
+    <p class="hlo">6</p>
+    <p class="hlo">8</p>
+    <p class="hlo">9</p>
+    <p class="hlo">10</p>
+    <p class="hlo">11</p>
+
+    <input type="button" value="qselector" onclick="qselector()">
+    <input type="button" value="qselectorall" onclick="qselectorAll()">
+    <script>
+        function qselector(){
+            document.querySelector(".hlo").style.color="#FF0000";
+        }
+
+
+        function qselectorAll(){
+            let x = document.querySelectorAll(".hlo");
+            for(let n=0;n<x.length;n++){
+                if(n%2==0){
+                    x[n].style.color ="#FF0000"
+                }
+                else{
+                    x[n].style.color ="blue"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

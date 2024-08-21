@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 300px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+    }
+
+</style>
+
+<body>
+    <form class="container ">
+      Eng:  <input type="text" placeholder="Enter the value of Eng"  class="container1" id="txtno1">
+        <br>
+       Guj: <input type="text" placeholder="Enter the value of Guj"  class="container1" id="txtno2">
+        <br>
+       Sci: <input type="text" placeholder="Enter the value of sci "  class="container1" id="txtno3">
+        <br>
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="max3();">
+
+     <span id="spanans"></span>
+     <span id="spanans1"></span>
+    </form>
+    
+</body>
+<script>
+    function max3(){
+
+        let eng=parseInt(document.getElementById("txtno1").value)
+        let guj=parseInt(document.getElementById("txtno2").value)
+        let sci=parseInt(document.getElementById("txtno3").value)
+         let total=eng+guj+sci
+
+        document.getElementById("spanans").innerHTML=total
+
+        if(total>100){
+            document.getElementById("spanans1").innerHTML="Gread A"
+        }
+        else if(total>60){
+            document.getElementById("spanans1").innerHTML="Gread B"
+        }
+        else{
+            document.getElementById("spanans1").innerHTML="Gread C"
+        }
+
+
+    }
+</script>
+</html>

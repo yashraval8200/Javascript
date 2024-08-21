@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Random Cards</title>
+</head>
+
+<body class="bg-gray-500 flex items-center justify-center min-h-screen">
+
+    <form>
+
+        <div class="flex flex-col bg-black rounded-2xl h-[30rem] w-[40rem] px-4 pt-[2rem] " id="cardContainer">
+
+            <div class="flex mx-2 space-x-7 m-4 ">
+                <img src="ace.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card1">
+                <img src="jake.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card2">
+                <img src="joker.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card3">
+                <img src="king.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card4">
+                <img src="queen.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card5">
+            </div>
+
+            <div class="flex mx-2 space-x-7">
+                <img src="seven.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card6">
+                <img src="tireeee.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card7">
+                <img src="two.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card8">
+                <img src="nine.png" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card9">
+                <img src="eight.jpg" class="reset w-[6rem] h-[9rem] hover:cursor-pointer" id="card10">
+            </div>
+
+            <div class="flex ml-[31%] mt-6 space-x-7">
+                <input class="bg-blue-600 active:bg-blue-800 font-bold text-lg text-white rounded-xl 
+                 mb-2 mt-6 w-[100px] cursor-pointer text-sm h-[30px] mr-6 ml-20" type="button" value="Generate"
+                    onclick="shuffleAndDisplayCards()">
+                <span id="ans"></span>
+            </div>
+
+        </div>
+
+    </form>
+
+
+
+
+    <script>
+        function shuffleAndDisplayCards() {
+            // Array of image sources
+            let images = [
+                "ace.jpg", "jake.jpg", "joker.jpg", "king.jpg", "queen.jpg",
+                "seven.png", "tireeee.png", "two.jpg", "nine.png", "eight.jpg"
+
+            ];
+
+            // Shuffle the images array
+            images.sort(() => Math.random() - 0.5);
+
+            // Select all images
+            let cardImages = document.querySelectorAll('.reset');
+
+            // Assign shuffled image sources to each image element
+            cardImages.forEach((img, index) => {
+                img.src = images[index];
+            });
+        }
+
+        // Initial call to display cards when the page loads
+        shuffleAndDisplayCards();
+    </script>
+
+
+</body>
+
+</html>

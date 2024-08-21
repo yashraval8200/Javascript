@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+
+    <form>
+
+        <div class="container flex items-center justify-center">
+            <div class="flex flex-col bg-slate-700 p-8 rounded-2xl w-96 shadow-md shadow-slate-500 ">
+
+                <!-- Username -->
+                <div>
+                    <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400"
+                        placeholder="User Name" type="text" id="uid" required>
+                    <span class="text-red-600 mx-2 text-2xl" id="ans1"></span>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400"
+                        placeholder="Password" type="password" id="pid" required>
+                    <span class="text-red-600 mx-2 text-2xl" id="ans2"></span>
+                </div>
+
+                <!-- Re-enter Password -->
+                <div>
+                    <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400"
+                        placeholder="Re-enter Password" type="password" id="rpid" required>
+                    <span class="text-red-600 mx-2 text-2xl" id="ans3"></span>
+                </div>
+
+                <!-- Gender -->
+                <div>
+                    <select class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" id="select" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span class="text-red-600 mx-2 text-2xl" id="ans4"></span>
+                </div>
+                <!-- Hobbey -->
+                <div class="text-white" id="Hobbey">
+                    Hobbey:<br>
+                    cricket <input type="checkbox" value="cricket" id="Hobbey1"><br>
+                    Volley ball<input type="checkbox" value="volleyball" id="Hobbey2"><br>
+                    Kho Kho<input type="checkbox" value="khokho" id="Hobbey3"><br>
+                    Kabaddi<input type="checkbox" value="kabaddi" id="Hobbey4"><br>
+
+                    <span class="text-red-600 mx-2 text-2xl" id="ans5"></span>
+                </div>
+                <!-- Adderss -->
+                 <div class="text-xl">
+                    <div class="text-white">address
+                        <textarea class="text-black" name="" id="address"></textarea>
+                    </div>
+                       
+                    
+                    <span class="text-red-600 mx-2 text-2xl" id="ans6"></span>
+                 </div>
+
+                <!-- Save Button -->
+                <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold text-white p-2 rounded-lg my-4" type="button" value="Save" id="btnsave">
+
+            </div>
+        </div>
+
+    </form>
+
+    <script>
+        let uid = document.querySelector("#uid");
+        let pid = document.querySelector("#pid");
+        let rpid = document.querySelector("#rpid");
+        let select = document.querySelector("#select");
+        let Hobbey1 = document.querySelector("#Hobbey1");
+        let Hobbey2 = document.querySelector("#Hobbey2");
+        let Hobbey3 = document.querySelector("#Hobbey3");
+        let Hobbey4 = document.querySelector("#Hobbey4");
+        let address = document.querySelector("#address")
+        let save = document.querySelector("#btnsave");
+        let ans1 = document.querySelector("#ans1");
+        let ans2 = document.querySelector("#ans2");
+        let ans3 = document.querySelector("#ans3");
+        let ans4 = document.querySelector("#ans4");
+        let ans5 = document.querySelector("#ans5");
+        let ans6 = document.querySelector("#ans6");
+
+        save.addEventListener("click", () => {
+            let a = uid.value;
+            let b = pid.value;
+            let c = rpid.value;
+            let d = select.value;
+            let k = 0;
+            let z=address.value;
+           
+            
+
+            if (a == "") {
+                ans1.innerHTML = "*";
+            } else {
+                ans1.innerHTML = "";
+            }
+
+            if (b == "") {
+                ans2.innerHTML = "*";
+            } else {
+                ans2.innerHTML = "";
+            }
+
+            if (c != b) {
+                ans3.innerHTML = c === "" ? "" : "Both Passwords are different";
+            } else {
+                ans3.innerHTML = "";
+            }
+
+            if (d == "") {
+                ans4.innerHTML = "*";
+            } else {
+                ans4.innerHTML = "";
+            }
+
+            if (Hobbey1.checked) {
+                k = 1;
+            }
+            if (Hobbey2.checked) {
+                k = 1;
+            }
+            if (Hobbey3.checked) {
+                k = 1;
+            }
+            if (Hobbey4.checked) {
+                k = 1;
+            }
+
+            if (k == 0) {
+                ans5.innerHTML = "Select one hobbey";
+            } else {
+                ans5.innerHTML = "";
+            }
+
+            if (z.length<10){
+                ans6.innerHTML="enter more than 10  characters"  
+            }
+            else{
+                ans6.innerHTML=""
+            }
+        });
+    </script>
+
+</body>
+</html>

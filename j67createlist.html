@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Text Box</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="text-center">
+        <button onclick="createbtn()" class="px-4 py-2 bg-blue-500 text-white rounded">Create Text Box</button>
+        <ul id="createtext" class="newitem">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+    </div>
+    <script>
+        function createbtn() {
+            // Create a new list item
+            let textBox = document.createElement('li');
+            textBox.className = 'mt-2 px-2 py-1 m-2 border rounded';
+            textBox.textContent = 'New Item';
+
+            // Append the list item to the container
+            document.getElementById('createtext').appendChild(textBox);
+        }
+    </script>
+</body>
+</html>

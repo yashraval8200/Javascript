@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 150px;
+        width: 300px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+    }
+
+</style>
+<body>
+    <script>
+
+        function max2()
+        {
+            let a=document.getElementById("txtno1").value;
+            let b=document.getElementById("txtno2").value;
+            if(a>b)
+            {
+                document.getElementById("spanans").innerHTML="no1 is greater";
+            }
+            else
+            {
+                document.getElementById("spanans").innerHTML=b;
+            }
+        }
+
+
+    </script>
+    <form class="container ">
+        <input type="text" placeholder="number1"  class="container1" id="txtno1">
+        <br>
+        <input type="text" placeholder="number2"  class="container1" id="txtno2">
+        <br>
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="max2();">
+
+     <span id="spanans"></span>
+    </form>
+    
+</body>
+</html>

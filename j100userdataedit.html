@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    First Name: <input type="text" id="fname"><br><br>
+    Last Name:  <input type="text" id="lname"><br><br>
+    <button value="submit" onclick="push()">Submit</button><br><br>
+
+    <div id="output"></div> <!-- Div to display the table -->
+</body>
+<script>
+    let student = [];
+    let editIndex = -1; // Variable to keep track of the index being edited
+
+    function push() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+
+        if (editIndex === -1) {
+            // Adding new record
+            student.push({ Firstname: fname, Lastname: lname });
+        } else {
+            // Editing existing record
+            student[editIndex].Firstname = fname;
+            student[editIndex].Lastname = lname;
+            editIndex = -1; // Reset edit index after editing
+        }
+
+        document.getElementById("fname").value = ""; // Clear input fields
+        document.getElementById("lname").value = "";
+        displayTable(); // Update the table
+    }
+
+    function displayTable() {
+        let table = "<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Action</th></tr>";
+
+        for(let i = 0; i < student.length; i++) {
+            table += "<tr><td>" + student[i].Firstname + "</td><td>" + student[i].Lastname + "</td>";
+            table += "<td><button onclick='editRecord(" + i + ")'>Edit</button></td></tr>";
+        }
+
+        table += "</table>";
+        document.getElementById('output').innerHTML = table;
+    }
+
+    function editRecord(index) {
+        // Populate input fields with the selected record's values
+        document.getElementById("fname").value = student[index].Firstname;
+        document.getElementById("lname").value = student[index].Lastname;
+        editIndex = index; // Set the index being edited
+    }
+</script>
+</html>

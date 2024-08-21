@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Genrate Captcha</title>
+</head>
+
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+<form >
+
+     <div class="container flex items-center justify-center">
+          <div class="flex flex-col bg-slate-700 p-8 rounded-2xl w-80 shadow-md shadow-slate-500">
+        
+  <!-- -- Answer -- -->
+  <span class="text-xl text-white  mx-[22px]" id="ans" > </span>
+  <br>
+  <span class="text-xl text-white  mx-[22px]" id="ans1" > </span>
+
+  <br>
+                <!-- Check Answer -->
+                <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" type="text" id="txt">
+
+               <!-- Button -->
+            
+               <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold 
+               text-white p-2 rounded-lg my-4"type="button" value="Click here" id="button" >    
+                       
+               <br>
+               <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold 
+               text-white p-2 rounded-lg my-4"type="button" value="submit" id="button1" >    
+               
+              
+             
+          </div>
+     </div>
+
+</form>
+
+     <script>
+
+let button=document.querySelector("#button");
+let button1=document.querySelector("#button1");
+let ans = document.querySelector("#ans");
+let ans1 = document.querySelector("#ans1"); 
+let txt=document.querySelector("#txt");
+ 
+ button.addEventListener("click", () => {
+            const character = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+            let characterlength = character.length;
+            let result = " ";
+            for (let i = 0; i < 5; i++) {
+                result += character.charAt(Math.floor(Math.random() * characterlength));
+            }
+            ans.innerHTML=result;
+        }
+
+        )
+        button1.addEventListener("click",()=> {
+            let y=txt.value;
+            let x=ans.innerText;
+            
+            
+
+            
+          
+          if(x==y){
+     
+            alert("correct answer")
+          } 
+           
+          else{
+            alert("Wrong answer")
+            
+          }
+        
+        })
+
+     </script>
+     
+</body>
+</html>

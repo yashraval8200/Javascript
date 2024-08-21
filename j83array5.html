@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+            <!-- Rows will be added here by JavaScript -->
+        </tbody>
+    </table>
+</body>
+<script>
+// Array of users with Indian names
+let users = [
+  { firstName: "Aarav", lastName: "Sharma", salary: 50000, department: "Engineering" },
+  { firstName: "Vihaan", lastName: "Patel", salary: 55000, department: "Marketing" },
+  { firstName: "Vivaan", lastName: "Reddy", salary: 45000, department: "Human Resources" },
+  { firstName: "Ananya", lastName: "Iyer", salary: 52000, department: "Finance" },
+  { firstName: "Diya", lastName: "Khan", salary: 47000, department: "Engineering" },
+  { firstName: "Krishna", lastName: "Gupta", salary: 51000, department: "Sales" },
+  { firstName: "Arjun", lastName: "Mehta", salary: 53000, department: "Marketing" },
+  { firstName: "Aanya", lastName: "Nair", salary: 49000, department: "Engineering" },
+  { firstName: "Sara", lastName: "Shah", salary: 48000, department: "Human Resources" },
+  { firstName: "Rohan", lastName: "Malhotra", salary: 60000, department: "Finance" },
+  { firstName: "Ishaan", lastName: "Bose", salary: 45000, department: "Sales" },
+  { firstName: "Aryan", lastName: "Mishra", salary: 56000, department: "Marketing" },
+  { firstName: "Saanvi", lastName: "Joshi", salary: 52000, department: "Engineering" },
+  { firstName: "Aditya", lastName: "Ghosh", salary: 53000, department: "Human Resources" },
+  { firstName: "Aarohi", lastName: "Kapoor", salary: 55000, department: "Finance" },
+  { firstName: "Kavya", lastName: "Verma", salary: 47000, department: "Sales" },
+  { firstName: "Reyansh", lastName: "Bhatia", salary: 49000, department: "Marketing" },
+  { firstName: "Laksh", lastName: "Pillai", salary: 48000, department: "Engineering" },
+  { firstName: "Kabir", lastName: "Rana", salary: 50000, department: "Finance" },
+  { firstName: "Anika", lastName: "Singh", salary: 53000, department: "Human Resources" }
+];
+
+function displayUsers(users) {
+  let tableBody = document.getElementById('userTable');
+  let rows = ''; // Initialize an empty string to hold the rows
+
+  users.map(user => {
+    rows += `
+      <tr>
+        <td>${user.firstName}</td>
+        <td>${user.lastName}</td>
+        <td>${user.salary}</td>
+        <td>${user.department}</td>
+      </tr>
+    `;
+  });
+
+  tableBody.innerHTML = rows; // Set the innerHTML of the table body to the rows string
+}
+
+// Call the function to display the user records
+displayUsers(users);
+
+</script>
+</html>

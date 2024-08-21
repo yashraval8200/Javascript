@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="mt-5">
+        <img class="h-[500px] mx-[300px]" src="binod.jpg" alt="Sachivji" id="img">
+    </div>
+
+    <div class="flex">
+        <div class="mx-[500px] mt-5 text-2xl">
+            1. What is the name of this character of Panchayat?<br>
+        </div>
+    </div>
+    <div class="mx-[500px] mt-2">
+        A. Bhudsan Ji <input type="radio" name="character" id="opt1" value="Bhudsan Ji"><br>
+        B. Sachivji <input type="radio" name="character" id="opt2" value="Sachivji"><br>
+        C. Binod <input type="radio" name="character" id="opt3" value="Vikas"><br>
+        D. prahlad cha <input type="radio" name="character" id="opt4" value="prahlad cha"><br>
+    </div>
+    <div>
+        <input onclick="btnsubmit()" type="button" value="Submit" class="bg-black text-white mx-[500px] rounded-lg h-[30px] w-[60px] hover:cursor-pointer">
+    </div>
+
+    <script>
+        function btnsubmit() {
+            if(opt3.checked){
+                window.location.assign("j77img3.html")
+            }
+        }
+    </script>
+</body>
+
+</html>

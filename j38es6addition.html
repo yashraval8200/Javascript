@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+        border: 1px solid black;
+        height: 400px;
+        width: 600px;
+        text-align: center;
+        background-color: lightblue;
+        margin: 500px;
+        border-radius: 10px;
+        margin-top: 200px;
+        justify-items: auto;
+
+
+
+    }
+
+    .container1 {
+        margin-top: 20px;
+        height: 30px;
+    }
+    </style>
+</head>
+<body>
+    <form action="" class="container">
+        Number 1: <input type="text" placeholder="Enter number" class="container1" id="txtno1">
+        <br>
+        Number 2: <input type="text" placeholder="Enter number" class="container1" id="txtno2"><br>
+<br>
+        <input type="button" id="sum" value="add">
+        <br><span id="spanans"></span>
+
+    </form>    
+</body>
+<script>
+    let txtno2 = document.querySelector("#txtno2");
+    let txtno1 = document.querySelector("#txtno1");
+    let span = document.querySelector("#spanans");
+    let add=document.querySelector("#sum");
+
+    add.addEventListener("click", ()=>{
+        let a = parseFloat(txtno1.value);
+        let b = parseFloat(txtno2.value);
+        span.innerHTML = a + b;
+    })
+
+</script>
+</html>

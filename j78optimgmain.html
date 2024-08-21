@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Q And Ans</title>
+</head>
+<body>
+
+<div>
+ <img class="mx-[29%] w-[45%] pt-8" src="sachivji.jpg" id="img1" alt="Sachiv Ji">
+ <p class="ml-[29%] pt-6" id="question">1. What is the Name Of This Character In Panchayat Web Series?</p>
+ <div class="ml-[30%] pt-2">
+     <input type="radio" name="A" id="opt1" value="1"><span id="label1"> (A) Prahlad cha</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt2" value="2"><span id="label2"> (B) Abhishek</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt3" value="3"><span id="label3"> (C) Bhusan Ji</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt4" value="4"><span id="label4"> (D) Binod</span> &nbsp;&nbsp;
+ </div>
+ <input type="button" value="Submit" class="h-8 bg-green-600 rounded-2xl px-4 mx-[46%] mt-8 hover:bg-green-700 active:bg-green-600" onclick="btnsubmit()">
+</div>
+
+<script>
+
+let turn = 1;
+let count = 1;
+
+function btnsubmit() {
+    let selectedOption = document.querySelector('input[name="A"]:checked');
+    
+    if (selectedOption) {
+        if (turn === 1) {
+            if (selectedOption.value == 2) {
+                turn++; 
+                count++;
+            } else {
+                alert("Wrong Answer");
+            }
+        } else if (turn == 2) {
+            if (selectedOption.value == 4) {
+                turn++; 
+                count++;
+            } else {
+                alert("Wrong Answer");
+            }
+        } else if (turn == 3) {
+            if (selectedOption.value == 2) {
+                turn++; 
+                count++;
+            } else {
+                alert("Wrong Answer");
+            }
+        } else if (turn == 4) {
+            if (selectedOption.value == 1) {
+                turn++; 
+                count++;
+            } else {
+                alert("Wrong Answer");
+            }
+        }
+        
+        updateQuestion();
+        uncheckAllRadioButtons();
+    } else {
+        alert("Please select an option");
+    }
+}
+
+function updateQuestion() {
+    if (turn === 2) {
+        document.getElementById('img1').src = "prahlad cha.jpg";
+        document.getElementById('label1').textContent = " (A) Sachiv Ji";
+        document.getElementById('label2').textContent = " (B) Vikas";
+        document.getElementById('label3').textContent = " (C) Pradhan Ji";
+        document.getElementById('label4').textContent = " (D) Prahlad cha";
+        document.getElementById('question').textContent = "2. What is the Name Of This Character In Panchayat Web Series?";
+    } else if (turn === 3) {
+        document.getElementById('img1').src = "bhusan.avif";
+        document.getElementById('label1').textContent = " (A) Sachiv Ji";
+        document.getElementById('label2').textContent = " (B) Bhusan Ji";
+        document.getElementById('label3').textContent = " (C) Vikas";
+        document.getElementById('label4').textContent = " (D) Pradhan Ji";
+        document.getElementById('question').textContent = "3. Who is this character?";
+    } else if (turn === 4) {
+        document.getElementById('img1').src = "binod.jpg";
+        document.getElementById('label1').textContent = " (A) Binod";
+        document.getElementById('label2').textContent = " (B) Abhishek";
+        document.getElementById('label3').textContent = " (C) Prahlad cha";
+        document.getElementById('label4').textContent = " (D) Bhusan Ji";
+        document.getElementById('question').textContent = "4. What is the Name Of This Character?";
+    }
+}
+
+function uncheckAllRadioButtons() {
+    let radioButtons = document.querySelectorAll('input[name="A"]');
+    radioButtons.forEach(radio => radio.checked = false);
+}
+
+</script>
+
+</body>
+</html>

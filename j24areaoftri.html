@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 350px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;  
+    }
+    .container1{
+        margin-top: 20px;
+    }
+    .spanans{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        color: white;
+    }
+
+</style>
+<body>
+    
+    <form class="container ">
+        H <input type="text" placeholder="enter the value of h"  class="container1" id="txtno1">
+        <br>
+        B <input type="text" placeholder="Enter the value of b"  class="container1" id="txtno2">
+        <br>
+     <input type="button" value="area of triangle"  class="container1" id="btnsubmit" onclick="artri();">
+    
+
+     <span id="spanans"></span>
+    </form>
+    
+</body>
+<script>
+    function artri(){
+        let h=parseInt(document.getElementById("txtno1").value);
+        let b=parseInt(document.getElementById("txtno2").value);
+            document.getElementById("spanans").innerHTML=h*b*0.5;     
+    }
+</script>
+</html>

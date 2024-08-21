@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .container{
+        border: 1px solid black;
+        height: 200px;
+        width: 350px;
+        text-align: center;
+        background-color:papayawhip;
+        margin: 50px;
+        border-radius: 10px;  
+    }
+    .container1{
+        margin-top: 20px;
+    }
+    .spanans{
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        color: white;
+    }
+
+    </style>
+</head>
+<body>
+    <form class="container ">
+        I <input type="text" placeholder="enter the value of R"  class="container1" id="txtno1">
+        <br>
+        
+     <input type="button" value="odd even"  class="container1" id="btnsubmit" onclick="oddeven();">
+    
+
+     <span id="spanans"></span>
+    </form>
+    <script>
+        function oddeven(){
+
+            let i=parseInt(document.getElementById("txtno1").value)
+
+            if(i%2==0){
+                document.getElementById("spanans").innerHTML="number is even"
+            }
+            else{
+                document.getElementById("spanans").innerHTML="number is odd"
+            }
+
+
+        }
+    </script>
+</body>
+</html>

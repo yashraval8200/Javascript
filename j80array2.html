@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>  
+    <script>
+        let a = []; // Array with numeric indexes
+        let data = {
+            firstname: "shyam",
+            lastname: "chawda",
+            contactno: "7874391191",
+            age: 39
+        }; // Object with named keys
+
+        // Create a table element
+        let table = document.createElement('table');
+        table.border = "1";
+
+        // Add array data to the table using map function
+        if (a.length > 0) {
+            let arrayRow = table.insertRow();
+            a.map(item => {
+                let cell = arrayRow.insertCell();
+                cell.textContent = item;
+            });
+        }
+
+        // Add object data to the table using Object.keys and map function
+        Object.keys(data).map(key => {
+            let row = table.insertRow();
+            let cellKey = row.insertCell();
+            let cellValue = row.insertCell();
+            cellKey.textContent = key;
+            cellValue.textContent = data[key];
+        });
+
+        // Append the table to the body
+        document.body.appendChild(table);
+    </script>
+</body>
+</html>

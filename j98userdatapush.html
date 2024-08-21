@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   First Name: <input type="text" id="fname"><br><br>
+   Last Name:  <input type="text" id="lname"><br><br>
+   <button value="submit" onclick="push()">Submit</button>
+
+   <div id="output"></div> <!-- Optional div to display the array -->
+</body>
+<script>
+    let student = [];
+
+    function push() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+
+        student.push({ Firstname: fname, Lastname: lname });
+        console.log(student);
+
+        // Display the student array in the output div
+        document.getElementById('output').innerText = JSON.stringify(student, 2);
+    }
+</script>
+</html>

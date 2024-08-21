@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        border: 1px solid black;
+        height: 300px;
+        width: 550px;
+        text-align: center;
+        background-color: papayawhip;
+        margin-top: 10%;
+        border-radius: 10px;
+        margin-left: 550px;
+
+
+    }
+
+    .container1 {
+        margin-top: 20px;
+    }
+    .span{
+        display: flex;
+        margin-left: 40%;
+        gap: 10px;
+    }
+</style>
+<body>
+    <form class="container ">
+        Number:<input type="text" placeholder="enter the number" class="container1" id="number1">
+        <br>
+
+        <input type="button" value="click me" class="container1" id="btnsubmit" onclick="oddeven();"><br>
+
+        <div class="span">
+        <span id="spanans"></span>
+        <span id="spanans1"></span>
+    </div>
+    </form>
+
+    <script>
+        function oddeven(){
+            let n=parseInt(document.getElementById("number1").value)
+        let a="";
+        let b="";
+
+
+        for(i=1;i<=n;i++){
+               
+                if(i%2==0){
+                 a+="<br>even"+i
+                   
+                }
+                else{
+                    b+="<br>odd"+i
+                   
+                    
+                }
+                
+        }
+        
+       
+         document.getElementById("spanans").innerHTML=a
+          document.getElementById("spanans1").innerHTML=b
+    }
+
+        
+    </script>
+    
+</body>
+
+</html>
